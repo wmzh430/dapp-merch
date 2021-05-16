@@ -20,7 +20,7 @@ const useStake = (pid: number) => {
         dispatch(fetchUserDataAsync(merchContract, account, [pid]))
         dispatch(setBeUpdateAsync())
         console.info(txHash)
-      } catch (e) {
+      } catch (e: any) {
         toastError(e.message)
         return false
       }

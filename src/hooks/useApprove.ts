@@ -20,7 +20,7 @@ export const useApprove = (lpContract: Contract) => {
       const tx = await approve(lpContract, merchNStakingContract, account)
       dispatch(setBeUpdateAsync())
       return tx
-    } catch (e) {
+    } catch (e: any) {
       toastError(e.message)
       return false
     }

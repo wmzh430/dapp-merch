@@ -18,7 +18,7 @@ export const useAllowance = (tokenContract: Contract, spenderAddress: string): B
       try {
         const res = await tokenContract.methods.allowance(account, spenderAddress).call()
         setAllowance(new BigNumber(res))
-      } catch (e) {
+      } catch (e: any) {
         toastError(e.message)
       }
     }
